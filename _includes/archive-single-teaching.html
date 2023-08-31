@@ -15,8 +15,7 @@
         {% endif %}
     </div>
     <div>
-        {{ title }}{% if post.type %},{% endif %}
-        {{ post.type }},
+        {{ title }}{% if post.type %}, {{ post.type }}{% endif %},
         {{ post.venue }},
         {{ post.location }}
     </div>
