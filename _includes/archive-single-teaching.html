@@ -15,8 +15,6 @@
         {% endif %}
     </div>
     <div>
-        {{ title }}SPACE_TEST_1{% if post.type %},SPACE_TEST_2{{ post.type }}SPACE_TEST_3{% endif %}
-        ,SPACE_TEST_4{{ post.venue }}SPACE_TEST_5
-        ,SPACE_TEST_6{{ post.location }}SPACE_TEST_7
+        {{ title }}{% if post.type %}, {{ post.type }}{% endif %}, {{ post.venue }}, {{ post.location }}
     </div>
 </div>
