@@ -1,12 +1,47 @@
 ---
 layout: archive
-title: "Teaching"
+title: "Current teaching assignments"
 permalink: /teaching/
 author_profile: true
 ---
 
 {% include base_path %}
 
-{% for post in site.teaching reversed %}
+{% comment %}
+<div style="font-size: 80%;">
+{% assign ongoing_courses = site.teaching | where: "ongoing", true | sort: "date" | reverse %}
+{% for post in ongoing_courses %}
   {% include archive-single.html %}
 {% endfor %}
+</div>
+
+<br/><br/>
+
+<h1>Previous teaching assignments</h1>
+
+<div style="font-size: 80%;">
+{% assign finished_courses = site.teaching | where: "ongoing", false | sort: "date" | reverse %}
+{% for post in finished_courses %}
+  {% include archive-single.html %}
+{% endfor %}
+</div>
+{% endcomment %}
+
+<div style="font-size: 80%;">
+  {% assign ongoing_courses = site.teaching | where: "ongoing", true | sort: "date" | reverse %}
+  {% for post in ongoing_courses %}
+    {% include archive-single-teaching.html %}
+  {% endfor %}
+  </div>
+  
+  <br/><br/>
+  
+  <h1>Previous teaching assignments</h1>
+  
+  <div style="font-size: 80%;">
+  {% assign finished_courses = site.teaching | where: "ongoing", false | sort: "date" | reverse %}
+  {% for post in finished_courses %}
+    {% include archive-single-teaching.html %}
+  {% endfor %}
+  </div>
+  

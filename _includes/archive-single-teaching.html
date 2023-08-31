@@ -1,0 +1,23 @@
+{% include base_path %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+<div style="display: flex;">
+    <div style="width: 150px;">
+        {% if post.date_range %}
+            {{ post.date_range }}:
+        {% else %}
+            {{ post.date | date: "%Y" }}:
+        {% endif %}
+    </div>
+    <div>
+        {{ title }}, 
+        {% if post.type %}{{ post.type }}, {% endif %}
+        {{ post.venue }},
+        {{ post.location }}
+    </div>
+</div>
