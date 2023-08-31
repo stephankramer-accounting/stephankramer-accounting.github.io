@@ -66,9 +66,12 @@ redirect_from:
 <br>
 <h1>Publications</h1>
 <hr class="short-line">
-  <ul>{% for post in site.publications %}
+<ul>
+  {% assign sorted_publications = site.publications | sort: "date" | reverse %}
+  {% for post in sorted_publications %}
     {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+  {% endfor %}
+</ul>
 
 <br>
 
