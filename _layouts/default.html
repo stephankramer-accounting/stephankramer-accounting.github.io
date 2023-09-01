@@ -17,16 +17,15 @@ layout: compress
     <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png">
     <meta name="theme-color" content="#ffffff">
 
-    {% if site.analytics.google_ga4.measurement_id %}
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google_ga4.measurement_id }}"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1C0MVP88HJ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', '{{ site.analytics.google_ga4.measurement_id }}');
+
+      gtag('config', 'G-1C0MVP88HJ');
     </script>
-    {% endif %} 
   </head>
 
   <body>
