@@ -6,7 +6,8 @@ type: "Podcast"
 venue: "Erasmus University"
 date: 2023-10-06
 location: "Rotterdam, Netherlands"
+external_url: https://www.youtube.com/watch?v=iliNu307j_Q&t=869s
 
 ---
 
-Podcast episode of "The CFO podcast" with Michel van den Bogaard, CFO at Signicat. Link: https://www.youtube.com/watch?v=iliNu307j_Q&t=869s
+Podcast episode of "The CFO podcast" with Michel van den Bogaard, CFO at Signicat.

@@ -56,7 +56,6 @@ redirect_from:
 <h1>Working Papers and Ongoing Projects</h1>
 <hr class="short-line">
 <ul>
-  <li>Navigating Through the Noise: The Effect of Color-Coded Performance Feedback on Decision-Making, with E. Cardinaels and V. Maas.<br> <i>Revise and resubmit</i> at <i>Contemporary Accounting Research</i></li>
   <li>Relative Performance Evaluation and Long-Term Incentives, with M. Matejka.</li>
   <li>CEO-workforce Ideological Divergence and Firm Efficiency, with F. Dai and M. Reimer.</li>
   <li>Incentive Effects of Performance Vesting Equity Grants, with T. Keusch and D. Tsui.</li>
