@@ -58,7 +58,7 @@ redirect_from:
 <ul>
   <li>Relative Performance Evaluation and Long-Term Incentives, with M. Matejka.</li>
   <li>CEO-workforce Ideological Divergence and Firm Efficiency, with F. Dai and M. Reimer.</li>
-  <li>Incentive Effects of Performance Vesting Equity Grants, with T. Keusch and D. Tsui.</li>
+  <li>Decentralization, Performance Measurement, and CEO Incentives, with M. Matejka.</li>
   <li>The Big Birthday Crisis: Exploring the Influence of 9-Ending Ages on CEO Behavior and Firm Outcomes, single-authored.</li>
 </ul>
 
