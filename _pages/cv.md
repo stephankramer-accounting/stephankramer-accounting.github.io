@@ -15,7 +15,12 @@ redirect_from:
 <hr class="short-line">
 
 <div style="display: flex;">
-    <div style="width: 100px;">2016-present:</div>
+    <div style="width: 100px;">2026-present:</div>
+    <div>Full Professor of Financial Decision Making and Control, Erasmus University, Rotterdam, The Netherlands</div>
+</div>
+
+<div style="display: flex;">
+    <div style="width: 100px;">2016-2026:</div>
     <div>Associate Professor of Accounting, Erasmus University, Rotterdam, The Netherlands</div>
 </div>
 

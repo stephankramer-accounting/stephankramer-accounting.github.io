@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-Welcome to my website! Working as an Associate Professor of Accounting and Control at RSM, Erasmus University, I employ archival and experimental methods to study the influence of incentive system design, governance mechanisms, target setting practices and performance evaluation on managerial behavior.
+I am a full professor of Financial Decision Making and Control at RSM, Erasmus University. I employ archival and experimental methods to study the influence of incentive system design, governance mechanisms, target setting practices and performance evaluation on managerial behavior.
 
 I hold a PhD from WHU – Otto Beisheim School of Management (Germany) and a MSc degree in Business Information Systems from the University of Münster (Germany). My research has been published in prestigious journals such as <i>The Accounting Review</i>, <i>Journal of Accounting Research</i>, <i>Contemporary Accounting Research</i>, <i>Accounting, Organizations and Society</i>, <i>Management Accounting Research</i> and <i>Abacus</i>. In 2016, my co-authors and I won the David Solomon's prize for the best article of the year in Management Accounting Research. In addition to my research activities, I serve on the editorial board of <i>Behavioral Research in Accounting</i> and as an ad-hoc editor at <i>Management Accounting Research</i>. I am also a reviewer for numerous top journals in the field.
 
