@@ -32,5 +32,5 @@
   }
   form.addEventListener('submit', event => { event.preventDefault(); unlock(input.value); });
   const key = location.hash.slice(1).replace(/^key=/,'');
-  if (key) { history.replaceState(null,'',location.pathname); unlock(key); }
+  if (key) { const supplied = location.hash.startsWith('#key=') || /^[A-Za-z0-9_-]{43}$/.test(key); history.replaceState(null,'',location.pathname); if (supplied) unlock(key); }
 })();
