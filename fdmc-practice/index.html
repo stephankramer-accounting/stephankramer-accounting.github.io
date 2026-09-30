@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Practice lab moved</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, sans-serif; color: #18354b; background: #f3f6f8; }
+    body { margin: 0; padding: 2rem 1rem; }
+    main { max-width: 40rem; margin: 5vh auto; padding: 2rem; background: #fff; border: 1px solid #d6e0e7; border-radius: .75rem; }
+    h1 { margin-top: 0; font-size: 1.8rem; line-height: 1.2; }
+    p, li { line-height: 1.6; }
+    li { margin-bottom: .5rem; }
+    a { color: #135ba4; text-underline-offset: .2em; }
+    .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.5rem 0; }
+    button, .button { font: inherit; padding: .75rem 1rem; border: 1px solid #135ba4; border-radius: .4rem; cursor: pointer; }
+    button { color: #135ba4; background: #fff; }
+    .button { display: inline-block; color: #fff; background: #135ba4; text-decoration: none; }
+    a:focus-visible, button:focus-visible { outline: 3px solid #bf6500; outline-offset: 4px; }
+    .note { padding: .75rem 1rem; border-left: 4px solid #bf6500; background: #fff5e6; }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>The practice lab has moved</h1>
+    <p>Use the new website to continue practising.</p>
+    <section id="saved-progress" aria-labelledby="progress-heading" hidden>
+      <h2 id="progress-heading">Keep your progress</h2>
+      <p>Your browser has progress saved for this address. Download it before opening the new practice lab.</p>
+      <ol>
+        <li>Download your progress with the button below.</li>
+        <li>Open the new practice lab. Select <strong>My progress</strong>, then <strong>Import progress</strong>, and choose your downloaded file.</li>
+      </ol>
+      <p id="recovery-note" class="note" hidden>Your browser also has a preserved copy of earlier progress. You can download that copy separately. If the new practice lab cannot read it, keep the file.</p>
+      <p>Your data stays in this browser. This page does not upload it or move it automatically. Downloading a copy leaves the saved data unchanged.</p>
+      <div class="actions">
+        <button id="download-progress" type="button" hidden>Download progress</button>
+        <button id="download-recovery" type="button" hidden>Download preserved progress</button>
+      </div>
+    </section>
+    <p id="storage-notice" class="note" role="status" hidden>This page cannot read this browser's saved progress. Check your browser's storage settings before leaving if you need to keep an earlier history.</p>
+    <p id="download-status" role="status" aria-live="polite"></p>
+    <p><a id="new-practice" class="button" href="https://stephan-kramer.github.io/fdmc-practice/">Open the new practice lab</a></p>
+    <noscript><p>Enable JavaScript to download progress saved in this browser before opening the new practice lab.</p></noscript>
+  </main>
+  <script>
+    (() => {
+      const destination = new URL('https://stephan-kramer.github.io/fdmc-practice/');
+      destination.search = window.location.search;
+      destination.hash = '';
+      document.getElementById('new-practice').href = destination.href;
+      let progress;
+      let recovery;
+      try {
+        progress = localStorage.getItem('fdmc-practice-history-v1');
+        recovery = localStorage.getItem('fdmc-practice-history-v1-recovery');
+      } catch {
+        document.getElementById('storage-notice').hidden = false;
+        return;
+      }
+      if (progress === null && recovery === null) {
+        window.location.replace(destination.href);
+        return;
+      }
+      document.getElementById('saved-progress').hidden = false;
+      document.getElementById('recovery-note').hidden = recovery === null;
+      const exportRaw = (raw, filename) => {
+        const url = URL.createObjectURL(new Blob([raw], { type: 'application/json;charset=utf-8' }));
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = filename;
+        document.body.append(link);
+        link.click();
+        link.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+        document.getElementById('download-status').textContent = 'Download started. Your saved data has been kept in this browser.';
+      };
+      if (progress !== null) {
+        const button = document.getElementById('download-progress');
+        button.hidden = false;
+        button.addEventListener('click', () => exportRaw(progress, 'fdmc-practice-progress.json'));
+      }
+      if (recovery !== null) {
+        const button = document.getElementById('download-recovery');
+        button.hidden = false;
+        button.addEventListener('click', () => exportRaw(recovery, 'fdmc-practice-preserved-progress.json'));
+      }
+    })();
+  </script>
+</body>
+</html>
